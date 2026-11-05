@@ -15,18 +15,32 @@ main {
 .hero { text-align: center; }
 .logo { width: min(520px, 90%); height: auto; }
 .tagline { font-size: 1.35em; margin: 8px 0 20px; color: #f3c27a; }
-.buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.buttons { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 22px;
   border-radius: 6px;
   color: #fff;
   font-weight: 700;
   text-decoration: none;
+  transition: transform .12s, filter .12s, box-shadow .12s;
 }
-.btn.steam { background: #1b6fb3; }
+.btn img { width: 26px; height: 26px; filter: invert(1); }
+.btn:hover { filter: brightness(1.12); transform: translateY(-2px); }
+.btn.steam {
+  padding: 12px 28px 12px 20px;
+  background: linear-gradient(90deg, #06bfff, #2d73ff);
+  box-shadow: 0 4px 18px rgba(6, 140, 255, .45);
+  font-size: 1.3em;
+  line-height: 1.1;
+}
+.btn.steam img { width: 40px; height: 40px; }
+.btn.steam span { display: flex; flex-direction: column; text-align: left; letter-spacing: .02em; }
+.btn.steam small { font-size: .55em; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; opacity: .9; }
+.btn.steam:hover { box-shadow: 0 6px 24px rgba(6, 140, 255, .65); }
 .btn.discord { background: #5865f2; }
-.btn:hover { filter: brightness(1.15); }
 .capsule { display: block; width: 100%; height: auto; margin: 28px 0; border-radius: 6px; }
 .lead { margin-top: 0; }
 .features { padding-left: 1.2em; }
